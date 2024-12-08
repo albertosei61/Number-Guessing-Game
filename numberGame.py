@@ -11,7 +11,7 @@ You have 5 chances to guess the correct number."""
 print(welcome_message)
 
 #Setting the variable to randomly select a number between 1 and 100.
-random_generator = random.randrange(1,100)
+random_generator = random.randint(1,100)
 
 #Setting match case for difficulty level
 
@@ -35,21 +35,17 @@ match sel_diff:
 "Let's start the game!")
 
 
+diff_level = {1: 10, 2: 5, 3: 3}
+guess_counter = diff_level.get(sel_diff, 0)
 
-guess_counter = 0
-if sel_diff == 1:
-    guess_counter += 10
-
-
-
-guess_number = int(input("Enter your guess: "))
-while guess_number != random_generator:
-    # if guess_counter != 0:
-    #     guess_counter -= 1
-    #     print("Try again")
-    if guess_counter == 0:
-        print("Sorry you ran out of turns") 
-
-    else:
+while guess_counter > 0:
+    guess_number = int(input("Enter your guess: "))
+    if guess_number == random_generator:
         print(f"""Congratulations the number was {random_generator} and you guessed {guess_number}.\n
-            You guessed the correct number in {guess_counter} attempts""")
+                You guessed the correct number in {guess_counter} attempts""")
+        break
+    elif guess_number != random_generator:
+        guess_counter -= 1
+        print(f"Try again you have {guess_counter} tries left!")
+else:
+    print(f"You ran out of attempts!\nThe correct answer was {random_generator}")
