@@ -1,0 +1,44 @@
+{
+    "easy_difficulty": [
+        {
+            "First_Place": "Al",
+            "guess_counter": "3"
+        },
+        {
+            "First_Place": "Al",
+            "guess_counter": "3"
+        },
+        {
+            "First_Place": "yvonne",
+            "guess_counter": "8"
+        }
+    ],
+    "medium_difficulty": [
+        {
+            "First_Place": "user",
+            "guess_counter": "5"
+        },
+        {
+            "Second_Place": "user",
+            "guess_counter": "5"
+        },
+        {
+            "Third_Place": "user",
+            "guess_counter": "5"
+        }
+    ],
+    "hard_difficulty": [
+        {
+            "First_Place": "user",
+            "guess_counter": "3"
+        },
+        {
+            "Second_Place": "user",
+            "guess_counter": "3"
+        },
+        {
+            "Third_Place": "user",
+            "guess_counter": "3"
+        }
+    ]
+}
