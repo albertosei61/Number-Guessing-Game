@@ -2,18 +2,18 @@
     "easy_difficulty": [
         {
             "place": "First",
-            "name": "Al",
-            "guess_counter": 3
+            "name": "user",
+            "guess_counter": 10
         },
         {
             "place": "Second",
-            "name": "Al",
-            "guess_counter": 3
+            "name": "user",
+            "guess_counter": 10
         },
         {
             "place": "Third",
-            "name": "test_user",
-            "guess_counter": "4"
+            "name": "user",
+            "guess_counter": "10"
         }
     ],
     "medium_difficulty": [
