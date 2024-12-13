@@ -5,8 +5,6 @@ import json
 
 class NumberGuessingGame:
     def __init__(self):
-        
-        
         self.diff_level = {1: 10, 2: 5, 3: 3}
         self.guess_counter = 0
         self.reset_game()
@@ -16,7 +14,7 @@ class NumberGuessingGame:
         self.guess_counter = 0
         self.sel_diff = 0
     
-    def start_menu(self):
+    def start_menu(self, file_path):
         print(f"""
         Welcome to the Number Guessing Game!:
         1. Start a new game
@@ -25,35 +23,21 @@ class NumberGuessingGame:
         if menu_ans == 1:
             self.play_game()
         elif menu_ans == 2:
-            with open('scores.json', 'r') as file:
+            with open(file_path, 'r') as file:
                 self.data = json.load(file)
-                view = self.data
 
-                print("Easy Difficulty:")
-                for i, score in enumerate(view["easy_difficulty"], start=1):
-                    print(f"{i}st Place: {score['First_Place']} - {score['guess_counter']} attempts")
-                
-                # print("\nMedium Difficulty")
-                # for i, score in enumerate(view["medium_difficulty"], start=1):
-                #     print(f"{i}st Place: {score['First_Place']} - {score['guess_counter']} attempts")
-                
-                # print("\nhard_difficulty")
-                # for i, score in enumerate(view["hard_difficulty"], start=1):
-                #     print(f"{i}st Place: {score['First_Place']} - {score['guess_counter']} attempts")
-
-      
-
-            
+                for difficulty, results in self.data.items():
+                    print(f"Difficulty: {difficulty}")
+                    for result in results:
+                        print(f"{result['place']}: Place: {result['name']}, guess_counter: {result['guess_counter']}") 
+                    print()
               
-
-
 
     def welcome_message(self):
         # Welcome Message to start the Number Guessing Game
         print(f"""Hello {self.user_name}, Welcome to the Number Guessing Game!
         I'm thinking of a number between 1 and 100.""")
         
-
 
     def difficulty_level(self):
         # Setting match case for difficulty level
@@ -90,21 +74,16 @@ class NumberGuessingGame:
         if self.current_score <= int(high_scores[0]["guess_counter"]):
             high_scores[2] = high_scores[1]
             high_scores[1] = high_scores[0]
-            high_scores[0] = {"First_Place": self.user_name, "guess_counter": str(self.current_score)}
+            high_scores[0] = {"place": self.user_name, "guess_counter": str(self.current_score)}
         elif self.current_score <= int(high_scores[1]["guess_counter"]):
             high_scores[2] = high_scores[1]
-            high_scores[1] = {"Second_Place": self.user_name, "guess_counter": str(self.current_score)}
+            high_scores[1] = {"place": self.user_name, "guess_counter": str(self.current_score)}
         elif self.current_score < int(high_scores[2]["guess_counter"]):
-            high_scores[2] = {"Third_Place": self.user_name, "guess_counter": str(self.current_score)}
+            high_scores[2] = {"place": self.user_name, "guess_counter": str(self.current_score)}
 
-        
         with open('scores.json', 'w') as file:
             json.dump(self.data, file, indent=4)
             
-
-
-
-
 
     def play_game(self):
         self.user_name = input("Enter name to begin game: ")
@@ -114,10 +93,8 @@ class NumberGuessingGame:
             self.difficulty_level()
             start_time = time.time()
             while self.guess_counter > 0:
-                
                 guess_number = int(input("Enter your guess: "))
-                
-                
+            
                 if guess_number == self.random_generator:
                     end_time = time.time()
                     time_taken = end_time - start_time
@@ -143,8 +120,7 @@ class NumberGuessingGame:
             self.reset_game()
 
 
-
 if __name__ == "__main__": 
     playgame = NumberGuessingGame()
-    playgame.start_menu()
+    playgame.start_menu('scores.json')
 

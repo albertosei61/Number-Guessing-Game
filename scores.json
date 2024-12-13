@@ -1,44 +1,53 @@
 {
     "easy_difficulty": [
         {
-            "First_Place": "Al",
-            "guess_counter": "3"
+            "place": "First",
+            "name": "Al",
+            "guess_counter": 3
         },
         {
-            "First_Place": "Al",
-            "guess_counter": "3"
+            "place": "Second",
+            "name": "Al",
+            "guess_counter": 3
         },
         {
-            "First_Place": "yvonne",
-            "guess_counter": "8"
+            "place": "Third",
+            "name": "test_user",
+            "guess_counter": "4"
         }
     ],
     "medium_difficulty": [
         {
-            "First_Place": "user",
-            "guess_counter": "5"
+            "place": "First",
+            "name": "user",
+            "guess_counter": 5
         },
         {
-            "Second_Place": "user",
-            "guess_counter": "5"
+            "place": "Second",
+            "name": "user",
+            "guess_counter": 5
         },
         {
-            "Third_Place": "user",
-            "guess_counter": "5"
+            "place": "Third",
+            "name": "user",
+            "guess_counter": 5
         }
     ],
     "hard_difficulty": [
         {
-            "First_Place": "user",
-            "guess_counter": "3"
+            "place": "First",
+            "name": "user",
+            "guess_counter": 3
         },
         {
-            "Second_Place": "user",
-            "guess_counter": "3"
+            "place": "Second",
+            "name": "user",
+            "guess_counter": 3
         },
         {
-            "Third_Place": "user",
-            "guess_counter": "3"
+            "place": "Third",
+            "name": "user",
+            "guess_counter": 3
         }
     ]
 }
