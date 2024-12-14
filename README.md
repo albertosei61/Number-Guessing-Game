@@ -62,3 +62,7 @@ Incorrect! The number is less than 35.
 
 Enter your guess: 30
 Congratulations! You guessed the correct number in 4 attempts.
+
+# Project Idea Source
+This project idea is from the roadmap.sh backend developer roadmap.
+* url: https://roadmap.sh/projects/number-guessing-game
